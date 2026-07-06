@@ -1,0 +1,23 @@
+# Netlify configuration for PokeVault
+
+[build]
+  publish = "."
+
+# Old filename -> homepage (in case anyone has the old link)
+[[redirects]]
+  from = "/pokevault.html"
+  to = "/index.html"
+  status = 301
+
+# Branded 404 for anything not found
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"

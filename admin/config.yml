@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded product photos are saved
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "settings.json"
+        description: "Change the email address that receives customer orders."
+        fields:
+          - { name: "orderEmail", label: "Order Email (receives customer orders)", widget: "string" }
+          - name: "paymentMethods"
+            label: "Payment Methods"
+            label_singular: "Payment Method"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: "name", label: "Name (e.g. Cash App)", widget: "string" }
+              - { name: "icon", label: "Icon (an emoji, e.g. 💵)", widget: "string", required: false }
+
+  - name: "products"
+    label: "Products"
+    files:
+      - name: "catalog"
+        label: "Product Catalog"
+        file: "products.json"
+        description: "Add, edit, or remove products. Changes go live after you save."
+        fields:
+          - name: "items"
+            label: "Products"
+            label_singular: "Product"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID (unique number)", widget: "number", value_type: "int" }
+              - { name: "name", label: "Product Name", widget: "string" }
+              - { name: "price", label: "Price (leave blank for 'Contact for price')", widget: "number", value_type: "float", required: false }
+              - { name: "image", label: "Product Photo", widget: "image", required: false }
+              - name: "category"
+                label: "Category"
+                widget: "select"
+                options:
+                  - "Booster Boxes"
+                  - "Elite Trainer Boxes"
+                  - "Booster Bundles"
+                  - "Poster/Special Collections"
+              - name: "badge"
+                label: "Badge (optional)"
+                widget: "select"
+                required: false
+                options: ["", "HOT", "RARE", "NEW", "GRAIL"]

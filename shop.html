@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary meta -->
+    <title>Shop Sealed Pokémon Products | PokeVault</title>
+    <meta name="description" content="Browse PokeVault's full range of sealed Pokémon TCG products — booster boxes, Elite Trainer Boxes, booster bundles and special collections. Filter by type and add to cart in seconds.">
+    <meta name="keywords" content="buy Pokemon booster box, Elite Trainer Box, booster bundle, sealed Pokemon TCG, 151, Prismatic Evolutions, Pokemon shop">
+    <meta name="author" content="PokeVault">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://pokemvault.netlify.app/shop.html">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PokeVault">
+    <meta property="og:title" content="Shop Sealed Pokémon Products | PokeVault">
+    <meta property="og:description" content="Browse the full range — sealed booster boxes, Elite Trainer Boxes, booster bundles and collections.">
+    <meta property="og:url" content="https://pokemvault.netlify.app/shop.html">
+    <meta property="og:image" content="https://pokemvault.netlify.app/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop Sealed Pokémon Products | PokeVault">
+    <meta name="twitter:description" content="Browse sealed Pokémon TCG booster boxes, ETBs, bundles and collections at PokeVault.">
+    <meta name="twitter:image" content="https://pokemvault.netlify.app/og-image.svg">
+
+    <!-- Structured data: breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pokemvault.netlify.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://pokemvault.netlify.app/shop.html" }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">POKEVAULT</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="index.html#rare">Featured</a></li>
+                <li><a href="index.html#live">Live Rips</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="cart-btn" onclick="openCart()" aria-label="Open cart">
+                    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="4"/><path d="M50 2 A48 48 0 0 1 50 98" fill="#ff3333"/><circle cx="50" cy="50" r="20" fill="#fff" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="50" r="8" fill="currentColor"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#rare">Featured</a>
+        <a href="index.html#live">Live Rips</a>
+        <a href="index.html#reviews">Reviews</a>
+    </div>
+
+    <!-- Shop Header -->
+    <header class="shop-header">
+        <h1>Sealed Products</h1>
+        <p>Browse our full range of sealed Pokémon booster boxes, Elite Trainer Boxes, booster bundles and collections</p>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('Booster Boxes', this)">Booster Boxes</button>
+            <button class="filter-btn" onclick="filterProducts('Elite Trainer Boxes', this)">Elite Trainer Boxes</button>
+            <button class="filter-btn" onclick="filterProducts('Booster Bundles', this)">Booster Bundles</button>
+            <button class="filter-btn" onclick="filterProducts('Poster/Special Collections', this)">Collections</button>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <main class="shop-content">
+        <div id="productsGrid"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">POKEVAULT</a>
+                <p>Your trusted source for authentic, sealed Pokémon TCG products. Boxes, bundles and collections — shipped fast.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="shop.html">Shop All</a></li>
+                    <li><a href="index.html#rare">Featured</a></li>
+                    <li><a href="index.html#live">Live Rips</a></li>
+                    <li><a href="index.html#reviews">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a class="js-order-email" href="mailto:tyronedupree849@gmail.com">tyronedupree849@gmail.com</a></li>
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="YouTube">▶</a>
+                    <a href="#" aria-label="TikTok">♪</a>
+                    <a href="#" aria-label="Instagram">◉</a>
+                    <a href="#" aria-label="Twitter">✕</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 PokeVault. All rights reserved. Pokémon is a trademark of Nintendo/Game Freak.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">Your cart is empty</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="checkout-btn" onclick="openCheckout()">Complete Order</button>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Complete Order</h2>
+                <button class="close-modal" onclick="closeModal()" aria-label="Close checkout">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-items" id="orderItems"></div>
+                <form id="orderForm" name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="order">
+                    <input type="hidden" name="order-details" id="hiddenOrder">
+                    <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email *</label>
+                        <input type="email" id="customerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone *</label>
+                        <input type="tel" id="customerPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">Shipping Address *</label>
+                        <textarea id="customerAddress" name="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="payment">
+                            <!-- Options render from settings.json (managed in /admin) -->
+                            <option value="Cash App">Cash App</option>
+                        </select>
+                    </div>
+                    <div class="order-total">
+                        <span>Order Total:</span>
+                        <strong id="orderTotal">$0.00</strong>
+                    </div>
+                    <button type="submit" class="submit-order">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Products are loaded from products.json (managed via /admin)
+        let allProducts = [];
+
+        let currentFilter = 'all';
+
+        // Cart State
+        let cart = JSON.parse(localStorage.getItem('pokevault-cart')) || [];
+
+        // Render Products
+        // Fixed category order for grouped display
+        const CATEGORY_ORDER = ["Booster Boxes", "Elite Trainer Boxes", "Booster Bundles", "Poster/Special Collections"];
+
+        function productCardHTML(product) {
+            const badgeClass = product.badge ? 'badge-' + product.badge.toLowerCase().replace(/[^a-z]/g,'') : '';
+            const hasPrice = product.price != null;
+            const priceHTML = hasPrice
+                ? `<span class="price">$${product.price.toFixed(2)}</span>`
+                : `<span class="price price-contact">Contact for price</span>`;
+            const buttonHTML = hasPrice
+                ? `<button class="add-to-cart" onclick="addToCart({id: ${product.id}, name: '${product.name}', price: ${product.price}, image: '${product.image}', category: '${product.category}'}, this)">Add</button>`
+                : `<a href="index.html#reviews" class="add-to-cart">Ask</a>`;
+            return `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${product.badge ? `<span class="product-badge ${badgeClass}">${product.badge}</span>` : ''}
+                        <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='favicon.svg';this.style.opacity=.35;">
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p class="category">${product.category}</p>
+                        <div class="product-footer">
+                            ${priceHTML}
+                            ${buttonHTML}
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('productsGrid');
+
+            if (filter !== 'all') {
+                const filtered = allProducts.filter(p => p.category === filter);
+                if (filtered.length === 0) {
+                    grid.innerHTML = '<div class="no-results"><h3>No products found</h3><p>Try a different category</p></div>';
+                    return;
+                }
+                grid.innerHTML = `<div class="category-grid">${filtered.map(productCardHTML).join('')}</div>`;
+                return;
+            }
+
+            // "All": group each category into its own labelled block (fills its rows before the next)
+            let html = '';
+            CATEGORY_ORDER.forEach(cat => {
+                const items = allProducts.filter(p => p.category === cat);
+                if (items.length === 0) return;
+                html += `
+                    <div class="category-block">
+                        <h3 class="category-heading">${cat}</h3>
+                        <div class="category-grid">${items.map(productCardHTML).join('')}</div>
+                    </div>`;
+            });
+            grid.innerHTML = html;
+        }
+
+        // Filter Products
+        function filterProducts(category, btn) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderProducts(category);
+        }
+
+        // Cart Functions
+        function addToCart(product, btn) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            saveCart();
+            updateCartUI();
+            flyToCart(btn, product.image);
+            if (btn) {
+                const orig = btn.textContent;
+                btn.textContent = '✓';
+                btn.style.background = 'linear-gradient(135deg,#2a7a2a,#1a5a1a)';
+                btn.style.color = '#fff';
+                setTimeout(() => {
+                    btn.textContent = orig;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 1100);
+            }
+        }
+
+        // Fly-to-cart: animates a mini card from the button to the Pokéball cart icon
+        function flyToCart(btn, imgSrc) {
+            const cartIcon = document.querySelector('.cart-btn');
+            if (!cartIcon || !btn) return;
+            const from = btn.getBoundingClientRect();
+            const to   = cartIcon.getBoundingClientRect();
+            const fly  = document.createElement('div');
+            fly.className = 'fly-card';
+            fly.innerHTML = `<img src="${imgSrc}" />`;
+            fly.style.cssText = `left:${from.left+from.width/2-27}px;top:${from.top+from.height/2-38}px;`;
+            document.body.appendChild(fly);
+            const dx = (to.left+to.width/2-27) - (from.left+from.width/2-27);
+            const dy = (to.top +to.height/2-38) - (from.top +from.height/2-38);
+            fly.animate([
+                {transform:'scale(1) rotate(0deg)', opacity:1},
+                {transform:`translate(${dx}px,${dy}px) scale(.15) rotate(25deg)`, opacity:0}
+            ], {duration:620, easing:'cubic-bezier(.4,0,.2,1)', fill:'forwards'})
+            .onfinish = () => {
+                fly.remove();
+                const svg = cartIcon.querySelector('svg');
+                if (svg) {
+                    svg.style.transform = 'scale(1.5) rotate(-20deg)';
+                    setTimeout(() => { svg.style.transform = ''; }, 320);
+                }
+            };
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartUI();
+            renderOrderItems();
+        }
+
+        function updateQuantity(productId, delta) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    saveCart();
+                    updateCartUI();
+                    renderOrderItems();
+                }
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem('pokevault-cart', JSON.stringify(cart));
+        }
+
+        function getCartTotal() {
+            return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cartCount');
+            const itemsEl = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            countEl.textContent = totalItems;
+            
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+            } else {
+                itemsEl.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <span class="item-price">$${item.price.toFixed(2)}</span>
+                            <div class="cart-item-controls">
+                                <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                <span class="item-qty">${item.quantity}</span>
+                                <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
+                    </div>
+                `).join('');
+            }
+            
+            totalEl.textContent = '$' + getCartTotal().toFixed(2);
+        }
+
+        // Cart Drawer
+        function openCart() {
+            document.getElementById('cartOverlay').classList.add('active');
+            document.getElementById('cartDrawer').classList.add('active');
+        }
+
+        function closeCart() {
+            document.getElementById('cartOverlay').classList.remove('active');
+            document.getElementById('cartDrawer').classList.remove('active');
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+        }
+
+        // Order Modal
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            closeCart();
+            renderOrderItems();
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').classList.remove('active');
+        }
+
+        function renderOrderItems() {
+            const orderItemsEl = document.getElementById('orderItems');
+            const orderTotalEl = document.getElementById('orderTotal');
+            
+            orderItemsEl.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div class="order-item-info">
+                        <h4>${item.name}</h4>
+                        <span>$${item.price.toFixed(2)} × ${item.quantity}</span>
+                    </div>
+                    <div class="order-item-controls">
+                        <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span class="item-qty">${item.quantity}</span>
+                        <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            orderTotalEl.textContent = '$' + getCartTotal().toFixed(2);
+        }
+
+        // Order Form Submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('customerName').value.trim();
+            const email = document.getElementById('customerEmail').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const address = document.getElementById('customerAddress').value.trim();
+            const payment = document.getElementById('paymentMethod').value;
+
+            if (!name || !email || !address) {
+                alert('Please fill in your name, email and shipping address.');
+                return;
+            }
+
+            const orderDetails = cart.map(item =>
+                `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`
+            ).join('\n');
+            const total = getCartTotal().toFixed(2);
+
+            // Capture order server-side via Netlify Forms
+            document.getElementById('hiddenOrder').value = `${orderDetails}\nTotal: $${total}`;
+            const fd = new FormData(this);
+            fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() })
+                .catch(() => {});
+
+            // Email fallback
+            const mailBody = `NEW ORDER FROM POKEVAULT
+
+Customer Information:
+- Name: ${name}
+- Email: ${email}
+- Phone: ${phone || 'N/A'}
+- Address: ${address}
+
+Order Details:
+${orderDetails}
+
+Total: $${total}
+Payment Method: ${payment}`.trim();
+
+            window.location.href = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent('New PokeVault Order from ' + name)}&body=${encodeURIComponent(mailBody)}`;
+
+            document.getElementById('orderItems').closest('.modal-body').innerHTML = `
+                <div style="text-align:center;padding:2.5rem 1.5rem;">
+                    <div style="font-size:3.5rem;margin-bottom:1rem;">⚡</div>
+                    <h3 style="font-family:'Orbitron',sans-serif;color:var(--primary);margin-bottom:.75rem;">Order Sent!</h3>
+                    <p style="color:var(--text-muted);line-height:1.7;">We'll contact <strong>${email}</strong> within 24 hours to confirm payment and shipping.</p>
+                </div>`;
+
+            cart = [];
+            saveCart();
+            updateCartUI();
+            setTimeout(closeModal, 4000);
+        });
+
+        // Initialize — load products from products.json (managed via /admin)
+        // Order email + payment methods are editable in /admin (Site Settings)
+        let ORDER_EMAIL = 'tyronedupree849@gmail.com';
+        const DEFAULT_PAYMENTS = ['Cash App','PayPal','Zelle','Venmo','Crypto'];
+        function renderPaymentSelect(methods) {
+            const sel = document.getElementById('paymentMethod');
+            if (!sel) return;
+            const names = (methods && methods.length ? methods.map(m => m.name) : DEFAULT_PAYMENTS);
+            sel.innerHTML = names.map(n => `<option value="${n}">${n}</option>`).join('');
+        }
+        renderPaymentSelect();
+        fetch('settings.json').then(r => r.json()).then(cfg => {
+            if (cfg && cfg.orderEmail) {
+                ORDER_EMAIL = cfg.orderEmail;
+                document.querySelectorAll('.js-order-email').forEach(a => {
+                    a.href = 'mailto:' + ORDER_EMAIL;
+                    a.textContent = ORDER_EMAIL;
+                });
+            }
+            if (cfg && cfg.paymentMethods) renderPaymentSelect(cfg.paymentMethods);
+        }).catch(()=>{});
+
+        fetch('products.json')
+            .then(r => r.json())
+            .then(data => {
+                allProducts = (data.items || data).filter(p => p && p.name);
+                renderProducts(currentFilter);
+            })
+            .catch(err => {
+                console.error('Could not load products.json', err);
+                document.getElementById('productsGrid').innerHTML =
+                    '<div class="no-results"><h3>Could not load products</h3><p>Please refresh the page.</p></div>';
+            });
+        updateCartUI();
+    </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+          }
+        });
+      }
+    </script>
+</body>
+</html>

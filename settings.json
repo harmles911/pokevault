@@ -1,0 +1,25 @@
+{
+  "orderEmail": "tyronedupree849@gmail.com",
+  "paymentMethods": [
+    {
+      "name": "Cash App",
+      "icon": "💵"
+    },
+    {
+      "name": "PayPal",
+      "icon": "🅿️"
+    },
+    {
+      "name": "Zelle",
+      "icon": "⚡"
+    },
+    {
+      "name": "Venmo",
+      "icon": "🔵"
+    },
+    {
+      "name": "Crypto",
+      "icon": "₿"
+    }
+  ]
+}

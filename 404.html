@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | PokeVault</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary:#ffd700; --bg-dark:#0a0a0f; --text:#fff; --text-muted:#9a9a9a; }
+        body {
+            font-family:'Rajdhani',sans-serif; background:var(--bg-dark); color:var(--text);
+            min-height:100vh; display:flex; align-items:center; justify-content:center;
+            text-align:center; padding:2rem; overflow:hidden; position:relative;
+        }
+        .glow { position:fixed; inset:0; z-index:0;
+            background:radial-gradient(ellipse at bottom,#1a1a2e 0%,#0a0a0f 100%); }
+        .wrap { position:relative; z-index:1; max-width:520px; }
+        .ball { width:110px; height:110px; margin:0 auto 2rem; animation:spin 8s linear infinite; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        h1 {
+            font-family:'Orbitron',sans-serif; font-size:clamp(4rem,18vw,7rem); font-weight:900;
+            background:linear-gradient(135deg,#ffd700,#fff,#ffd700);
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+            line-height:1; margin-bottom:1rem;
+        }
+        h2 { font-family:'Orbitron',sans-serif; color:var(--primary); font-size:1.4rem; margin-bottom:1rem; }
+        p { color:var(--text-muted); font-size:1.1rem; margin-bottom:2rem; line-height:1.6; }
+        .btn {
+            display:inline-block; padding:1rem 2rem; font-family:'Orbitron',sans-serif;
+            font-weight:600; border-radius:8px; text-decoration:none;
+            background:linear-gradient(135deg,#ffd700,#b8860b); color:#000;
+            box-shadow:0 0 30px rgba(255,215,0,.4); transition:transform .3s,box-shadow .3s;
+        }
+        .btn:hover { transform:translateY(-3px); box-shadow:0 0 50px rgba(255,215,0,.6); }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    <div class="wrap">
+        <svg class="ball" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="#0a0a0f" stroke="#ffd700" stroke-width="5"/>
+            <path d="M4 50a46 46 0 0 1 92 0Z" fill="#ffd700"/>
+            <rect x="4" y="46.5" width="92" height="7" fill="#0a0a0f"/>
+            <circle cx="50" cy="50" r="15" fill="#0a0a0f" stroke="#ffd700" stroke-width="5"/>
+            <circle cx="50" cy="50" r="6" fill="#ffd700"/>
+        </svg>
+        <h1>404</h1>
+        <h2>This card got away</h2>
+        <p>The page you're looking for isn't in the vault. It may have been moved, or the link might be wrong.</p>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

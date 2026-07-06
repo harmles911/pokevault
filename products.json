@@ -1,0 +1,188 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Phantasmal Flames Booster Box",
+      "price": 230.0,
+      "image": "images/phantasmal-flames-booster-box.jpg",
+      "category": "Booster Boxes",
+      "badge": "HOT"
+    },
+    {
+      "id": 2,
+      "name": "Perfect Order Booster Box",
+      "price": 250.0,
+      "image": "images/perfect-order-booster-box.jpg",
+      "category": "Booster Boxes",
+      "badge": ""
+    },
+    {
+      "id": 3,
+      "name": "Surging Sparks Booster Box",
+      "price": 250.0,
+      "image": "images/surging-sparks-booster-box.jpg",
+      "category": "Booster Boxes",
+      "badge": "HOT"
+    },
+    {
+      "id": 4,
+      "name": "Mega Evolution Booster Box",
+      "price": 250.0,
+      "image": "images/mega-evolution-booster-box.jpg",
+      "category": "Booster Boxes",
+      "badge": ""
+    },
+    {
+      "id": 5,
+      "name": "Destined Rivals Booster Box",
+      "price": null,
+      "image": "images/destined_rivals.jpg",
+      "category": "Booster Boxes",
+      "badge": "RARE"
+    },
+    {
+      "id": 17,
+      "name": "Stellar Crown Booster Box",
+      "price": 250.0,
+      "image": "images/stellar_crown_booster_box_250_.jpg",
+      "category": "Booster Boxes",
+      "badge": ""
+    },
+    {
+      "id": 18,
+      "name": "Sword & Shield Booster Box",
+      "price": null,
+      "image": "images/sword_and_shield_booster_box.jpg",
+      "category": "Booster Boxes",
+      "badge": ""
+    },
+    {
+      "id": 6,
+      "name": "Phantasmal Flames Elite Trainer Box",
+      "price": 85.0,
+      "image": "images/phantasmal-flames-etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 7,
+      "name": "Perfect Order Elite Trainer Box",
+      "price": 90.0,
+      "image": "images/perfect-order-etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 8,
+      "name": "Ascended Heroes Elite Trainer Box",
+      "price": 120.0,
+      "image": "images/ascended-heroes-etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": "NEW"
+    },
+    {
+      "id": 9,
+      "name": "Mega Evolution Elite Trainer Box",
+      "price": 90.0,
+      "image": "images/mega-evolution-etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 10,
+      "name": "Chaos Rising Elite Trainer Box",
+      "price": 100.0,
+      "image": "images/chaos_rising_etb_100_.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 11,
+      "name": "Scarlet & Violet 151 Elite Trainer Box",
+      "price": null,
+      "image": "images/151_etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 19,
+      "name": "Crown Zenith Elite Trainer Box",
+      "price": 100.0,
+      "image": "images/crown_and_zenith_etb_100_.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 20,
+      "name": "Destined Rivals Elite Trainer Box",
+      "price": 85.0,
+      "image": "images/destined_rivals_elite_box_85.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 21,
+      "name": "Prismatic Evolutions Elite Trainer Box",
+      "price": 180.0,
+      "image": "images/prismatic_evolution_elite_box180_.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": "RARE"
+    },
+    {
+      "id": 22,
+      "name": "Twilight Masquerade Elite Trainer Box",
+      "price": 170.0,
+      "image": "images/twilight_masquerade_elite_box_170_.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 23,
+      "name": "Black Bolt Elite Trainer Box",
+      "price": null,
+      "image": "images/black_bolt_etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 24,
+      "name": "White Flare Elite Trainer Box",
+      "price": null,
+      "image": "images/white_flare_etb.jpg",
+      "category": "Elite Trainer Boxes",
+      "badge": ""
+    },
+    {
+      "id": 12,
+      "name": "Scarlet & Violet 151 Booster Bundle",
+      "price": 150.0,
+      "image": "images/scarlet_and_violet.jpg",
+      "category": "Booster Bundles",
+      "badge": "HOT"
+    },
+    {
+      "id": 15,
+      "name": "Blooming Waters Premium Collection",
+      "price": 85.0,
+      "image": "images/blooming-waters.jpg",
+      "category": "Poster/Special Collections",
+      "badge": "HOT"
+    },
+    {
+      "id": 16,
+      "name": "Scarlet & Violet 151 Ultra-Premium Collection",
+      "price": 250.0,
+      "image": "images/151_upc250_.jpg",
+      "category": "Poster/Special Collections",
+      "badge": "GRAIL"
+    },
+    {
+      "id": 25,
+      "name": "Sword & Shield Ultra-Premium Collection (Charizard)",
+      "price": 180.0,
+      "image": "images/ultra_p_collection180_.jpg",
+      "category": "Poster/Special Collections",
+      "badge": "GRAIL"
+    }
+  ]
+}
