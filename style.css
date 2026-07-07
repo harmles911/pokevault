@@ -1707,20 +1707,20 @@
     width: 26px;
     height: 26px;
 }
-/* Filled head = solid Pikachu (yellow face, brown ear tips, red cheeks, dark eyes) */
-.pk.filled .face  { fill: #f6c915; }
-.pk.filled .ear   { fill: #f6c915; }
-.pk.filled .eartip{ fill: #8a5a00; }
-.pk.filled .cheek { fill: #e23b2e; }
-.pk.filled .eye   { fill: #1a1a1a; }
-.pk.filled .nose  { fill: #1a1a1a; }
-.pk.filled { filter: drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
+/* Filled head = bright golden Pikachu (the given stars, all in yellow) */
+.pk.filled .face  { fill: #ffd700; }
+.pk.filled .ear   { fill: #ffd700; }
+.pk.filled .eartip{ fill: #b8860b; }
+.pk.filled .cheek { fill: #ffb300; }
+.pk.filled .eye   { fill: #7a5c00; }
+.pk.filled .nose  { fill: #7a5c00; }
+.pk.filled { filter: drop-shadow(0 0 6px rgba(255,215,0,.45)); }
 
 /* Empty head = outline only (like the unfilled 5th head) */
 .pk.empty .face,
 .pk.empty .ear {
     fill: none;
-    stroke: #f6c915;
+    stroke: #ffd700;
     stroke-width: 1.4;
 }
 .pk.empty .eartip,
